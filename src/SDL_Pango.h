@@ -26,6 +26,7 @@
 
 #ifndef SDL_PANGO_H
 #define SDL_PANGO_H
+#define SDL_PANGO_HAS_GC_EXTENSIONS
 
 #include "SDL.h"
 
@@ -109,12 +110,20 @@ typedef enum {
     SDLPANGO_DIRECTION_NEUTRAL	/*! Neutral */
 } SDLPango_Direction;
 
-
+/*!
+    Specifies alignment of text. See Pango reference for detail
+*/
+typedef enum {
+    SDLPANGO_ALIGN_LEFT,
+    SDLPANGO_ALIGN_CENTER,
+    SDLPANGO_ALIGN_RIGHT
+} SDLPango_Alignment;
 
 extern DECLSPEC int SDLCALL SDLPango_Init();
 
 extern DECLSPEC int SDLCALL SDLPango_WasInit();
 
+extern DECLSPEC SDLPango_Context* SDLCALL SDLPango_CreateContext_GivenFontDesc(const char* font_desc);
 extern DECLSPEC SDLPango_Context* SDLCALL SDLPango_CreateContext();
 
 extern DECLSPEC void SDLCALL SDLPango_FreeContext(
@@ -156,6 +165,12 @@ extern DECLSPEC void SDLCALL SDLPango_SetMarkup(
     SDLPango_Context *context,
     const char *markup,
     int length);
+
+extern DECLSPEC void SDLCALL SDLPango_SetText_GivenAlignment(
+    SDLPango_Context *context,
+    const char *text,
+    int length,
+    SDLPango_Alignment alignment);
 
 extern DECLSPEC void SDLCALL SDLPango_SetText(
     SDLPango_Context *context,
