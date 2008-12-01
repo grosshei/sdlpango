@@ -24,7 +24,7 @@ CONFIGURE_FILE (
 ADD_CUSTOM_TARGET ( uninstall "${CMAKE_COMMAND}"
   -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake" )
 ###############################################################################
-INCLUDE(FindPkgConfig REQUIRED )
 SET ( CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" )
+FIND_PACKAGE ( Pango REQUIRED)
 FIND_PACKAGE ( SDL REQUIRED )
 ADD_SUBDIRECTORY ( src )

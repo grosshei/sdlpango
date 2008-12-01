@@ -2,12 +2,9 @@
 ###############################################################################
 # sdlpango/src/CMakeLists.txt
 ###############################################################################
-FIND_PACKAGE ( pango REQUIRED)
-MESSAGE ( "DIR: ${PANGOFT2_INCLUDE_DIR}" )
-MESSAGE ( "LIB: ${PANGOFT2_LIBRARIES}" )
-INCLUDE_DIRECTORIES ( ${SDL_INCLUDE_DIR} ${PANGOFT2_INCLUDE_DIR} )
-LINK_LIBRARIES ( ${CMAKE_DL_LIBS} ${SDL_LIBRARY} ${PANGO_LIBRARIES}
-		${PANGOFT2_LIBRARIES} SDLMain )
+INCLUDE_DIRECTORIES ( ${SDL_INCLUDE_DIR} ${Pango_INCLUDE_DIRS} )
+LINK_LIBRARIES ( ${CMAKE_DL_LIBS} ${SDL_LIBRARY} ${Pango_LIBRARIES}
+		SDLMain )
 SET ( SRCS
 	SDL_Pango.c SDL_Pango.h
 )
