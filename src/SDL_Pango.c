@@ -287,10 +287,10 @@ typedef struct _contextImpl {
 
 
 const SDLPango_Matrix _MATRIX_WHITE_BACK
-    = {255, 0, 0, 0,
-       255, 0, 0, 0,
-       255, 0, 0, 0,
-       255, 255, 0, 0,};
+    = {{{255, 0, 0, 0},
+        {255, 0, 0, 0},
+        {255, 0, 0, 0},
+        {255, 255, 0, 0}}};
 
 /*!
     Specifies white back and black letter.
@@ -298,40 +298,40 @@ const SDLPango_Matrix _MATRIX_WHITE_BACK
 const SDLPango_Matrix *MATRIX_WHITE_BACK = &_MATRIX_WHITE_BACK;
 
 const SDLPango_Matrix _MATRIX_BLACK_BACK
-    = {0, 255, 0, 0,
-       0, 255, 0, 0,
-       0, 255, 0, 0,
-       255, 255, 0, 0,};
+    = {{{0, 255, 0, 0},
+        {0, 255, 0, 0},
+        {0, 255, 0, 0},
+        {255, 255, 0, 0}}};
 /*!
     Specifies black back and white letter.
 */
 const SDLPango_Matrix *MATRIX_BLACK_BACK = &_MATRIX_BLACK_BACK;
 
 const SDLPango_Matrix _MATRIX_TRANSPARENT_BACK_BLACK_LETTER
-    = {0, 0, 0, 0,
-       0, 0, 0, 0,
-       0, 0, 0, 0,
-       0, 255, 0, 0,};
+    = {{{0, 0, 0, 0},
+        {0, 0, 0, 0},
+        {0, 0, 0, 0},
+        {0, 255, 0, 0}}};
 /*!
     Specifies transparent back and black letter.
 */
 const SDLPango_Matrix *MATRIX_TRANSPARENT_BACK_BLACK_LETTER = &_MATRIX_TRANSPARENT_BACK_BLACK_LETTER;
 
 const SDLPango_Matrix _MATRIX_TRANSPARENT_BACK_WHITE_LETTER
-    = {255, 255, 0, 0,
-       255, 255, 0, 0,
-       255, 255, 0, 0,
-       0, 255, 0, 0,};
+    = {{{255, 255, 0, 0},
+        {255, 255, 0, 0},
+        {255, 255, 0, 0},
+        {0, 255, 0, 0}}};
 /*!
     Specifies transparent back and white letter.
 */
 const SDLPango_Matrix *MATRIX_TRANSPARENT_BACK_WHITE_LETTER = &_MATRIX_TRANSPARENT_BACK_WHITE_LETTER;
 
 const SDLPango_Matrix _MATRIX_TRANSPARENT_BACK_TRANSPARENT_LETTER
-    = {255, 255, 0, 0,
-       255, 255, 0, 0,
-       255, 255, 0, 0,
-       0, 0, 0, 0,};
+    = {{{255, 255, 0, 0},
+        {255, 255, 0, 0},
+        {255, 255, 0, 0},
+        {0, 0, 0, 0}}};
 /*!
     Specifies transparent back and transparent letter.
     This is useful for KARAOKE like rendering.
@@ -489,6 +489,10 @@ drawLine(
     PangoRectangle logical_rect;
     PangoRectangle ink_rect;
     int x_off = 0;
+
+    /* only suppress warning */
+    fg_color.red = fg_color.green = fg_color.blue = 0;
+    bg_color.red = bg_color.green = bg_color.blue = 0;
 
     while (tmp_list) {
 	SDLPango_Matrix color_matrix = context->color_matrix;
