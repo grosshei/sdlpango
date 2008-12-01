@@ -3,7 +3,7 @@
 # sdlpango/src/CMakeLists.txt
 ###############################################################################
 INCLUDE_DIRECTORIES ( ${SDL_INCLUDE_DIR} ${Pango_INCLUDE_DIRS}
-		${GLIB_INCLUDE_DIR}
+		${GLIB_INCLUDE_DIRS}
 		${Freetype_INCLUDE_DIRS} )
 LINK_LIBRARIES ( ${CMAKE_DL_LIBS} ${SDL_LIBRARY} ${Pango_LIBRARIES}
 		${Freetype_LIBRARIES} ${GLIB_LIBRARY}
