@@ -2,7 +2,7 @@
 ###############################################################################
 # sdlpango/CMakeLists.txt
 ###############################################################################
-SET ( TUXANCI_VERSION "dev" CACHE STRING "Version" ) # this is redefine able
+SET ( VERSION "1.1.0" CACHE STRING "Version" ) # this is redefine able
 SET ( CMAKE_INSTALL_PREFIX "/usr/local/" CACHE PATH "Install path prefix" )
 SET ( CMAKE_INSTALL_LIBDIR lib )
 SET ( WORKDIR ${CMAKE_SOURCE_DIR}/src )
