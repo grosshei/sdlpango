@@ -9,6 +9,7 @@ SET ( WORKDIR ${CMAKE_SOURCE_DIR}/src )
 ###############################################################################
 
 PROJECT ( sdlpango C )
+SET ( APPNAME sdl-pango )
 CMAKE_MINIMUM_REQUIRED ( VERSION 2.6.0 )
 CMAKE_MINIMUM_REQUIRED ( VERSION 2.6.0 FATAL_ERROR )
 IF ( COMMAND cmake_policy )
