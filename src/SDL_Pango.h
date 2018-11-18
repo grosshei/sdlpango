@@ -34,6 +34,7 @@
 #include "SDL.h"
 
 #include "begin_code.h"
+#include <ft2build.h>
 
 #ifdef __cplusplus
 extern "C" {
