@@ -190,7 +190,7 @@ extern DECLSPEC void SDLCALL SDLPango_SetBaseDirection(
     SDLPango_Direction direction);
 
 
-#ifdef __FT2_BUILD_UNIX_H__
+#ifdef FT2BUILD_H_
 
 extern DECLSPEC void SDLCALL SDLPango_CopyFTBitmapToSurface(
     const FT_Bitmap *bitmap,
@@ -198,7 +198,7 @@ extern DECLSPEC void SDLCALL SDLPango_CopyFTBitmapToSurface(
     const SDLPango_Matrix *matrix,
     SDL_Rect *rect);
 
-#endif	/* __FT2_BUILD_UNIX_H__ */
+#endif	/* FT2BUILD_H_ */
 
 
 #ifdef __PANGO_H__
