@@ -35,6 +35,7 @@
 
 #include "begin_code.h"
 #include <ft2build.h>
+#include <freetype/ftbitmap.h>
 
 #ifdef __cplusplus
 extern "C" {
